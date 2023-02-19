@@ -7,14 +7,13 @@
  
  /*Fine details to use*/
  
-diameter = 50;
-height = 60;
-wall_thickness = 2;
-handle_thickness = 8;
-icon_size = 15;
+diameter = 40;
+height = 50;
+wall_thickness = 1.5;
+handle_thickness = 7;
 resolution = 500;
-bottom_thickness = 5;
-hand_size = 20;
+bottom_thickness = 4;
+hand_size = 15;
 handle = true;
 handle_resolution = 300;
 
@@ -22,7 +21,7 @@ $fn = resolution;
 
 /* Modules */
 
-module mug_added()
+module cup_added()
 {
     cylinder(d=diameter, h=height);
     if(handle == true){
@@ -30,7 +29,7 @@ module mug_added()
     }
 }
 
-module mug_taken()
+module cup_taken()
 {
     translate([0,0,bottom_thickness]) cylinder(d=diameter-(wall_thickness*2), h=height);
     }
@@ -47,6 +46,6 @@ module handle()
 /* Functions */
         
 difference(){
-    mug_added();
-    mug_taken();
+    cup_added();
+    cup_taken();
     }
